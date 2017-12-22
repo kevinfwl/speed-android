@@ -2,10 +2,17 @@ package com.game_environment;
 
 public class Player {
 
-    private int type;
+    private int wins;
+    private Card[] personalDeck;
+    private Card[] hand;
+    private int points;
 
-    public static void main(String[] args) {
-        System.out.println("Hello World");0
+    private Player() {
+        wins = 0;
+        personalDeck = new Card[10];
+        hand = new Card[17];
+        points = 0;
+
     }
-    public
-    }
+    //shuffle
+}
