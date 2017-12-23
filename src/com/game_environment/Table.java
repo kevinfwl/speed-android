@@ -3,7 +3,7 @@ package com.game_environment;
 
 public class Table {
     private Card[] Deck;
-    private
+    private Card[] ;
     private int roundNumber;
     private Player player1;
     private Player player2;
@@ -11,9 +11,7 @@ public class Table {
     public Table() {
 
     }
-    public static
-
-    Card[] randomizeDeck(Card[] deck) {
+    public static Card[] randomizeDeck(Card[] deck) {
 
     }
 

@@ -44,7 +44,7 @@ public class Player {
         return wins;
     }
 
-    public void getPoints() {
+    public int getPoints() {
         return points;
     }
 
