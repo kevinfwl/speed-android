@@ -2,13 +2,14 @@ package com.game_environment;
 
 public class Card {
     private int number;
+    private int status;
 
     //instance methods
     private Card() {
         number = 0;
     }
 
-    private Card(int number) {
+    private Card(int number, int status) {
         this.number = number;
     }
 
@@ -19,6 +20,15 @@ public class Card {
     private int getNumber() {
         return number;
     }
+
+    private void setStatus(int status) {
+        this.status = number;
+    }
+
+    private int getStatus() {
+        return status;
+    }
+
     //Converts the number of the card into a value of the thing
     private String GetValue() {
 
