@@ -24,6 +24,13 @@ public class Player {
         points = 0;
     }
 
+    public Player(int wins, Card[] personalDeck, Card[] hand, int points) {
+        this.wins = wins;
+        this.personalDeck = personalDeck;
+        this.hand = hand;
+        this.points = points;
+    }
+
     public void setWins(int wins) {
         this.wins = wins;
     }
@@ -55,6 +62,7 @@ public class Player {
     public Card[] getHand() {
         return hand;
     }
+
 
 
     //shuffle

@@ -5,32 +5,34 @@ public class Card {
     private int status;
 
     //instance methods
-    private Card() {
+    public Card() {
         number = 0;
+        status = 0;
     }
 
-    private Card(int number, int status) {
+    public Card(int number, int status) {
+        this.number = number;
+        this.status = status;
+    }
+
+    public void setNumber(int number) {
         this.number = number;
     }
 
-    private void setNumber(int number) {
-        this.number = number;
-    }
-
-    private int getNumber() {
+    public int getNumber() {
         return number;
     }
 
-    private void setStatus(int status) {
+    public void setStatus(int status) {
         this.status = number;
     }
 
-    private int getStatus() {
+    public int getStatus() {
         return status;
     }
 
     //Converts the number of the card into a value of the thing
-    private String GetValue() {
+    public String GetValue() {
 
         if (number == 53) {
             return "Joker1";
@@ -72,4 +74,5 @@ public class Card {
         }
         return suit + " " + Number;
     }
+
 }
