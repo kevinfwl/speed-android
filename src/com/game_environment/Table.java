@@ -5,16 +5,19 @@ import java.util.Random;
 import java.util.Stack;
 
 public class Table {
-    private Card[] playingField1;
-    private Card[] playingField2;
+    private Stack<Card> playingField1;
+    private Stack<Card> playingField2;
     private int roundNumber;
     private Player player1;
     private Player player2;
 
+    public static void Main(String[] args) {
+    }
+
     public static Stack ProduceRandomizedDeck() {
         Card[] Deck = new Card[54];
         for (int i = 0; i < 54; i++) {
-            Deck[i] = new Card(i , 0);
+            Deck[i] = new Card(i , false);
         }
 
         Random random = new Random();
@@ -39,15 +42,22 @@ public class Table {
 
     }
 
-    public static Card[] Deal(Stack<Card> stack_of_cards) {
-        for ()
+    //deal cards to player one and player 2
+    public void Deal_Cards(Stack<Card> stack_of_cards) {
+        personalHand1
+        for (int i = 0 ; i < stack_of_cards.size(); i++ ) {
+
+        }
     }
 
+    public boolean CardsPlayable() {
+        //check player1
+    }
 
 
     //instance methods
     //constructor
-    public Table(Card[] playingField1, Card[] playingField2, int roundNumber, Player player1, Player player2) {
+    public Table(Stack<Card> playingField1, Stack<Card> playingField2, int roundNumber, Player player1, Player player2) {
         this.playingField1 = playingField1;
         this.playingField2 = playingField2;
         this.roundNumber = roundNumber;
@@ -55,19 +65,19 @@ public class Table {
         this.player2 = player2;
     }
     //selector
-    public Card[] getPlayingField1() {
+    public Stack<Card>  getPlayingField1() {
         return playingField1;
     }
 
-    public void setPlayingField1(Card[] playingField1) {
+    public void setPlayingField1(Stack<Card>  playingField1) {
         this.playingField1 = playingField1;
     }
 
-    public Card[] getPlayingField2() {
+    public Stack<Card> getPlayingField2() {
         return playingField2;
     }
 
-    public void setPlayingField2(Card[] playingField2) {
+    public void setPlayingField2(Stack<Card>  playingField2) {
         this.playingField2 = playingField2;
     }
 
