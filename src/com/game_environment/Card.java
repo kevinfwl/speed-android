@@ -1,79 +1,63 @@
 package com.game_environment;
 
 public class Card {
-    private int number;
-    private boolean Upwards;
+    public static final int LARGEST_RANK_VALUE = 12;
+    public static final int SMALLEST_RANK_VALUE = 0;
+
+    private int rank;
+    private int suit;
+    private boolean flipped;
 
     //instance methods
     public Card() {
-        number = 0;
-        Upwards = true;
+        rank = 0;
+        suit = 0;
+        flipped = false;
     }
 
-    public Card(int number, boolean upwards) {
-        this.number = number;
-        Upwards = upwards;
+    public Card(int rank, int suit, boolean flipped) {
+        this.rank = rank;
+        this.suit = suit;
+        this.flipped = flipped;
     }
 
-    public int getNumber() {
-        return number;
+    public int getRank() {
+        return rank;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setRank(int rank) {
+        this.rank = rank;
     }
 
-    public boolean isUpwards() {
-        return Upwards;
+    public int getSuit() {
+        return suit;
     }
 
-    public void setUpwards() {
-        Upwards = true;
+    public void setSuit(int suit) {
+        this.suit = suit;
     }
 
-    public void setDownwards( ) {
-        Upwards = false;
+    public boolean isFlipped() {
+        return flipped;
     }
 
-    public String getSuit() {
-        if (number == 53 || number == 54) return "";
-        int modded_value = (number % 4);
-        switch (modded_value) {
-            case 0:
-                return "D";
-            case 1:
-                return "C";
-            case 2:
-                return "H";
-            case 3:
-                return "S";
-            default:
-                return "";
-        }
+    public void setFlipped(boolean flipped) {
+        this.flipped = flipped;
     }
 
-    public String getRank() {
-        if (number == 53) {
-            return "Joker1";
-        } else if (number == 54) {
-            return "Joker2";
-        }
+    public String print_card() {
+        String str_suit = "";
+        String str_rank = "";
+        if (suit == 0) str_suit = "D";
+        else if (suit == 1) str_suit = "C";
+        else if (suit == 2) str_suit = "H";
+        else str_suit = "S";
 
-        int modded_value = (number % 4);
-        switch ((54 - modded_value) / 4) {
-            case 10:
-                return "J";
-            case 11:
-                return "Q";
-            case 12:
-                return "K";
-            default:
-                return Integer.toString((54 - modded_value) / 4);
-        }
-    }
-    //Converts the number of the card into a value of the thing
-    public String GetValue() {
-        return getSuit() + " " + getRank();
-    }
+        if (rank >= 0 && rank <= 9) str_rank = Integer.toString(rank + 1);
+        else if (rank == 10) str_rank = "J";
+        else if (rank == 11) str_rank = "Q";
+        else str_rank = "K";
 
+        return str_rank + str_suit;
+    }
 }
